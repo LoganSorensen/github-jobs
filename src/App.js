@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import SearchPage from "./pages/searchPage";
+import JobPage from "./pages/jobPage";
+
+import {jobsAPI } from './utils/jobsAPI'
+
+import "./styles/index.css";
 
 function App() {
+  const hitAPI = () => {
+    jobsAPI()
+      .get(
+        
+      )
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>
+          Github <span>Jobs</span>
+        </h1>
       </header>
+      <button onClick={hitAPI}>hit API</button>
+      <SearchPage />
     </div>
   );
 }
