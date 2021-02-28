@@ -14,6 +14,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <div className="App">
       <header>
@@ -21,7 +22,7 @@ function App() {
           Github <span>Jobs</span>
         </h1>
       </header>
-      <button onClick={hitAPI}>hit API</button>
+      {/* <button onClick={hitAPI}>hit API</button> */}
       <SearchPage />
     </div>
   );
