@@ -191,6 +191,9 @@ h1 span {
 .filters-and-jobs {
   display: flex;
 }
+a {
+  text-decoration: none;
+}
 .search {
   width: 100%;
   margin: 3rem 0 3rem;
@@ -378,4 +381,30 @@ h1 span {
 .job-cards .job-date svg,
 .job-cards .job-date span {
   color: #b7bcce;
+}
+.job-page {
+  margin: 5rem 0;
+}
+.sidebar {
+  font-family: "Poppins", sans-serif;
+  width: 20%;
+  font-size: 1.4rem;
+}
+.sidebar a {
+  display: flex;
+  align-items: center;
+}
+.sidebar a,
+.sidebar svg {
+  color: #1e86ff;
+  font-weight: 500;
+}
+.sidebar svg {
+  margin-right: 2rem;
+}
+.sidebar h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b9bcdf;
+  margin: 5rem 0 2rem;
 }
