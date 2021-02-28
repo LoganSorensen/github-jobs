@@ -190,7 +190,7 @@ h1 span {
 }
 .search {
   width: 100%;
-  margin-top: 2%;
+  margin: 3rem 0 3rem;
   background-image: url("../assets/backgroundImg.png");
   border-radius: 8px;
   padding: 4em 0;
@@ -206,7 +206,7 @@ h1 span {
   position: absolute;
   left: 2%;
   font-size: 1.5rem;
-  color: #b9bdcf;
+  color: #b9bcdf;
 }
 .search form input {
   font-size: 1.2rem;
@@ -219,7 +219,7 @@ h1 span {
   width: 100%;
 }
 .search form input::placeholder {
-  color: #b9bdcf;
+  color: #b9bcdf;
 }
 .search form button {
   color: white;
@@ -232,4 +232,60 @@ h1 span {
   height: 88%;
   padding: 0.2em 3em;
   right: 0.5%;
+}
+.filters {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  width: 25%;
+}
+.filters .full-time-checkbox {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #334680;
+  margin-bottom: 2.5rem;
+}
+.filters .location h3 {
+  font-weight: 700;
+  color: #b9bcdf;
+  text-transform: uppercase;
+}
+.filters .location .search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.filters .location .search-bar input {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 2rem 0;
+  padding: 1.5em;
+  padding-left: 3.2rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.filters .location .search-bar input::placeholder {
+  color: #b9bcdf;
+}
+.filters .location svg {
+  position: absolute;
+  color: #b9bcdf;
+  margin-left: 3%;
+}
+.filters .location .location-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.filters .location .location-option label {
+  color: #334680;
+  font-weight: 500;
+}
+.filters .location .location-option input {
+  margin: 0;
+  margin-right: 1rem;
+  height: 1.8rem;
+  width: 1.8rem;
 }

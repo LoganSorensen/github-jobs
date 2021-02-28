@@ -1,18 +1,16 @@
 import SearchPage from "./pages/searchPage";
 import JobPage from "./pages/jobPage";
 
-import {jobsAPI } from './utils/jobsAPI'
+import { jobsAPI } from "./utils/jobsAPI";
 
 import "./styles/index.css";
 
 function App() {
   const hitAPI = () => {
     jobsAPI()
-      .get(
-        
-      )
-      .then(res => {
-        console.log(res.data)
+      .get()
+      .then((res) => {
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   };
