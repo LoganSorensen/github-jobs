@@ -10,7 +10,7 @@ const JobCards = () => {
 
   const hitAPI = () => {
     jobsAPI()
-      .get('positions.json?page=1&search=code')
+      .get("positions.json?page=1&search=code")
       .then((res) => {
         console.log(res.data);
         setJobs(res.data);

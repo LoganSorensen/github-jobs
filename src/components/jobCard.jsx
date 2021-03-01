@@ -2,15 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import moment from "moment";
+
+import { formatDate } from "../utils/formatDate";
 
 const JobCard = ({ job }) => {
-  const formatDate = (date) => {
-    const createdAt = moment(date);
-    const now = moment();
-    return createdAt.from(now);
-  };
-
   return (
     <div className="job-card">
       {job !== undefined && (

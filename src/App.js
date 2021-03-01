@@ -6,8 +6,6 @@ import JobPage from "./pages/jobPage";
 import "./styles/index.css";
 
 function App() {
-  
-
   return (
     <div className="App">
       <header>
@@ -15,12 +13,10 @@ function App() {
           Github <span>Jobs</span>
         </h1>
       </header>
-      {/* <SearchPage /> */}
-      <Route exact path='/' component={SearchPage} />
-      <Route exact path='/listing/:id'>
+      <Route exact path="/" component={SearchPage} />
+      <Route exact path="/listing/:id">
         <JobPage />
       </Route>
-
     </div>
   );
 }

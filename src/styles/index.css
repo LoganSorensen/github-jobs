@@ -48,9 +48,6 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -106,10 +103,6 @@ section {
 }
 body {
   line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
 }
 blockquote,
 q {
@@ -175,7 +168,7 @@ table {
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
-  background-color: #F6F7FB;
+  background-color: #f6f7fb;
 }
 body {
   padding: 2% 7%;
@@ -193,6 +186,48 @@ h1 span {
 }
 a {
   text-decoration: none;
+}
+.company-logo {
+  display: flex;
+  align-items: center;
+  width: 9rem;
+  height: 9rem;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-right: 1.3rem;
+}
+.company-logo img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.company-logo .no-logo {
+  background-color: #f2f2f2;
+}
+.company-logo .no-image {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+.full-time {
+  border: 1px solid #334680;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  width: 6.3rem;
+}
+.job-date svg,
+.job-date span {
+  color: #b7bcce;
+}
+.job-location svg,
+.job-location span {
+  color: #b9bcdf;
 }
 .search {
   width: 100%;
@@ -311,29 +346,6 @@ a {
   position: relative;
   cursor: pointer;
 }
-.job-cards .company-logo {
-  display: flex;
-  align-items: center;
-  width: 9rem;
-  height: 9rem;
-  overflow: hidden;
-  border-radius: 4px;
-  margin-right: 1.3rem;
-}
-.job-cards img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-.job-cards .no-logo {
-  background-color: #f2f2f2;
-}
-.job-cards .no-image {
-  margin: 0 auto;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #bdbdbd;
-}
 .job-cards .job-details {
   height: 100%;
   color: #334680;
@@ -346,17 +358,6 @@ a {
   font-size: 1.8rem;
   font-weight: 400;
   margin: 1em 0;
-}
-.job-cards .job-details .full-time {
-  border: 1px solid #334680;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding: 0.5rem;
-  width: 6.3rem;
 }
 .job-cards .job-location-and-date {
   display: flex;
@@ -371,19 +372,12 @@ a {
 .job-cards .job-location-and-date svg {
   margin-right: 0.7rem;
 }
-.job-cards .job-location svg,
-.job-cards .job-location span {
-  color: #b9bcdf;
-}
 .job-cards .job-date {
   margin-left: 2rem;
 }
-.job-cards .job-date svg,
-.job-cards .job-date span {
-  color: #b7bcce;
-}
 .job-page {
   margin: 5rem 0;
+  display: flex;
 }
 .sidebar {
   font-family: "Poppins", sans-serif;
@@ -407,4 +401,63 @@ a {
   font-weight: 700;
   color: #b9bcdf;
   margin: 5rem 0 2rem;
+}
+.job-desc {
+  width: 75%;
+  margin-left: 5%;
+}
+.job-desc .title-and-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.job-desc .title-and-type h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #334680;
+  margin-right: 1.5rem;
+}
+.job-desc .job-date svg {
+  margin-right: 0.6rem;
+}
+.job-desc .company-info {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+.job-desc .company-info .company-logo {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+.job-desc .company-info .name-and-loc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 4.2rem;
+}
+.job-desc .company-info h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #334680;
+}
+.job-desc .company-info svg {
+  margin: 0 0.8rem;
+}
+.job-desc .company-info span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.job-desc .description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #334680;
+  margin-top: 3.5rem;
+}
+.job-desc .description p,
+.job-desc .description li {
+  margin: 2rem 0;
+}
+.job-desc .description h2 {
+  margin-top: 4rem;
+  font-weight: 500;
 }

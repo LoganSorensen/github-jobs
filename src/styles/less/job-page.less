@@ -1,5 +1,6 @@
 .job-page {
   margin: 5rem 0;
+  display: flex;
 }
 
 .sidebar {
@@ -27,5 +28,77 @@
     font-weight: 700;
     color: @light-gray;
     margin: 5rem 0 2rem;
+  }
+}
+
+.job-desc {
+  width: 75%;
+  margin-left: 5%;
+
+  .title-and-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: @dark-blue;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .job-date svg {
+    margin-right: 0.6rem;
+  }
+
+  .company-info {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+
+    .company-logo {
+      width: 4.2rem;
+      height: 4.2rem;
+    }
+
+    .name-and-loc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 4.2rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: @dark-blue;
+    }
+
+    svg {
+      margin: 0 0.8rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  .description {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: @dark-blue;
+    margin-top: 3.5rem;
+
+    p,
+    li {
+      margin: 2rem 0;
+    }
+
+    h2 {
+      margin-top: 4rem;
+      font-weight: 500;
+    }
   }
 }
