@@ -1,11 +1,56 @@
+import { useEffect } from "react";
 import { Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 import SearchPage from "./pages/searchPage";
 import JobPage from "./pages/jobPage";
+import { jobsAPI } from "./utils/jobsAPI";
+import { setSearchResults } from "./actions/setSearchResultsActions";
 
 import "./styles/index.css";
 
-function App() {
+function App(props) {
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition(success, error);
+  };
+
+  const success = (position) => {
+    console.log(position);
+
+    jobsAPI()
+      .get(
+        `positions.json?lat=${position.coords.latitude}&long=${position.coords.longitude}`
+      )
+      .then((res) => {
+        // if there are no jobs near the user, the search will default to new york
+        if (res.data.length === 0) {
+          jobsAPI()
+            .get(`positions.json?location=ny`)
+            .then((res) => {
+              props.setSearchResults(res.data);
+            })
+            .catch((err) => console.log(err));
+        } else {
+          props.setSearchResults(res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const error = (error) => {
+    console.log(error);
+    jobsAPI()
+      .get(`positions.json?location=ny`)
+      .then((res) => {
+        props.setSearchResults(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
   return (
     <div className="App">
       <header>
@@ -21,4 +66,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { setSearchResults })(App);

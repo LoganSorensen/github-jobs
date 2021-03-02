@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -8,24 +8,23 @@ import { jobsAPI } from "../utils/jobsAPI";
 import { setSearchResults } from "../actions/setSearchResultsActions";
 
 const JobCards = (props) => {
-  const hitAPI = () => {
-    jobsAPI()
-      .get("positions.json?page=1&search=code")
-      .then((res) => {
-        console.log(res.data);
-        props.setSearchResults(res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const hitAPI = () => {
+  //   jobsAPI()
+  //     .get("positions.json?page=1&search=code")
+  //     .then((res) => {
+  //       props.setSearchResults(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   return (
     <div className="job-cards">
-      <button onClick={hitAPI}>hit API</button>
+      {/* <button onClick={hitAPI}>hit API</button> */}
       {props.jobs !== undefined &&
-        props.jobs.map((job, index) => {
+        props.jobs.map((job) => {
           return (
-            <Link to={`/listing/${job.id}`}>
-              <JobCard key={index} job={job} />
+            <Link key={job.id} to={`/listing/${job.id}`}>
+              <JobCard job={job} />
             </Link>
           );
         })}
@@ -34,7 +33,6 @@ const JobCards = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     jobs: state.setSearchResults.jobs,
   };
