@@ -7,7 +7,7 @@ const Filters = () => {
     <div className="filters">
       <div className="full-time-checkbox">
         <input type="checkbox" id="full-time" />
-        <label htmlFor="full-time">Full time</label>
+        <label htmlFor="full-time">Full time only</label>
       </div>
       <div className="location">
         <h3>Location</h3>

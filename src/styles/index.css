@@ -457,7 +457,8 @@ a {
 .job-desc .description li {
   margin: 2rem 0;
 }
-.job-desc .description h2 {
+.job-desc .description h2,
+.job-desc .description strong {
   margin-top: 4rem;
   font-weight: 500;
 }
