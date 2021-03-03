@@ -15,8 +15,6 @@ function App(props) {
   };
 
   const success = (position) => {
-    console.log(position);
-
     jobsAPI()
       .get(
         `positions.json?lat=${position.coords.latitude}&long=${position.coords.longitude}`
@@ -24,12 +22,7 @@ function App(props) {
       .then((res) => {
         // if there are no jobs near the user, the search will default to new york
         if (res.data.length === 0) {
-          jobsAPI()
-            .get(`positions.json?location=ny`)
-            .then((res) => {
-              props.setSearchResults(res.data);
-            })
-            .catch((err) => console.log(err));
+          error();
         } else {
           props.setSearchResults(res.data);
         }
@@ -37,7 +30,7 @@ function App(props) {
       .catch((err) => console.log(err));
   };
 
-  const error = (error) => {
+  const error = (error = "An error has occured") => {
     console.log(error);
     jobsAPI()
       .get(`positions.json?location=ny`)

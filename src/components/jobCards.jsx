@@ -8,18 +8,19 @@ import { jobsAPI } from "../utils/jobsAPI";
 import { setSearchResults } from "../actions/setSearchResultsActions";
 
 const JobCards = (props) => {
-  // const hitAPI = () => {
-  //   jobsAPI()
-  //     .get("positions.json?page=1&search=code")
-  //     .then((res) => {
-  //       props.setSearchResults(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const hitAPI = () => {
+    jobsAPI()
+      .get("positions.json?")
+      .then((res) => {
+        console.log(res.data)
+        props.setSearchResults(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="job-cards">
-      {/* <button onClick={hitAPI}>hit API</button> */}
+      <button onClick={hitAPI}>hit API</button>
       {props.jobs !== undefined &&
         props.jobs.map((job) => {
           return (

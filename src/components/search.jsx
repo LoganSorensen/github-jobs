@@ -16,13 +16,16 @@ const Search = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     jobsAPI()
-      .get(`positions.json?search=${search}`)
+      // appends the job location to the URL if one has been specified
+      .get(
+        `positions.json?search=${search}${
+          props.location !== null ? `&location=${props.location}` : ""
+        }`
+      )
       .then((res) => {
-        console.log(res.data);
         props.setSearchResults(res.data);
       })
       .catch((err) => console.log(err));
-    setSearch("");
   };
 
   return (
@@ -41,4 +44,10 @@ const Search = (props) => {
   );
 };
 
-export default connect(null, { setSearchResults })(Search);
+const mapStateToProps = (state) => {
+  return {
+    location: state.setFilters.location,
+  };
+};
+
+export default connect(mapStateToProps, { setSearchResults })(Search);

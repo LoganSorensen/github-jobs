@@ -1,1 +1,3 @@
 export const SET_SEARCH_RESULTS = "SET_SEARCH_RESULTS";
+
+export const SET_FILTERS = "SET_FILTERS";
