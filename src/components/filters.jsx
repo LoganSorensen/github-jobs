@@ -34,6 +34,7 @@ const Filters = (props) => {
         <input
           type="checkbox"
           id="full-time"
+          checked={props.fullTime === true ? true : false}
           onChange={() => props.toggleFullTime()}
         />
         <label htmlFor="full-time">Full time only</label>
@@ -115,4 +116,10 @@ const Filters = (props) => {
   );
 };
 
-export default connect(null, { setFilters, toggleFullTime })(Filters);
+const mapStateToProps = (state) => {
+  return {
+    fullTime: state.setFilters.fullTime
+  }
+}
+
+export default connect(mapStateToProps, { setFilters, toggleFullTime })(Filters);
