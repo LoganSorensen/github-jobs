@@ -24,18 +24,17 @@ function App(props) {
         if (res.data.length === 0) {
           error();
         } else {
-          props.setSearchResults(res.data);
+          props.setSearchResults(res.data, props.fullTime);
         }
       })
       .catch((err) => console.log(err));
   };
 
   const error = (error = "An error has occured") => {
-    console.log(error);
     jobsAPI()
       .get(`positions.json?location=ny`)
       .then((res) => {
-        props.setSearchResults(res.data);
+        props.setSearchResults(res.data, props.fullTime);
       })
       .catch((err) => console.log(err));
   };
@@ -59,4 +58,10 @@ function App(props) {
   );
 }
 
-export default connect(null, { setSearchResults })(App);
+const mapStateToProps = (state) => {
+  return {
+    fullTime: state.setFilters.fullTime,
+  };
+};
+
+export default connect(mapStateToProps, { setSearchResults })(App);

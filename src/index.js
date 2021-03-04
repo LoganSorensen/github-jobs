@@ -6,19 +6,18 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
 import App from "./App";
-import rootReducer from './reducers'
+import rootReducer from "./reducers";
 
 import reportWebVitals from "./reportWebVitals";
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-
-    <Router>
-      <App />
-    </Router>
+      <Router>
+        <App />
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -18,7 +18,6 @@ const JobPage = () => {
     jobsAPI()
       .get(`positions/${params.id}.json`)
       .then((res) => {
-        console.log(res.data);
         setJob(res.data);
       })
       .catch((err) => console.log(err));

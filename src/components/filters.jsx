@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
-import { setFilters } from "../actions/setFiltersActions";
+import { setFilters, toggleFullTime } from "../actions/setFiltersActions";
 
 const Filters = (props) => {
   const [location, setLocation] = useState("");
@@ -31,7 +31,11 @@ const Filters = (props) => {
   return (
     <div className="filters">
       <div className="full-time-checkbox">
-        <input type="checkbox" id="full-time" />
+        <input
+          type="checkbox"
+          id="full-time"
+          onChange={() => props.toggleFullTime()}
+        />
         <label htmlFor="full-time">Full time only</label>
       </div>
       <div className="location">
@@ -111,4 +115,4 @@ const Filters = (props) => {
   );
 };
 
-export default connect(null, { setFilters })(Filters);
+export default connect(null, { setFilters, toggleFullTime })(Filters);

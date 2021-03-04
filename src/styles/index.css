@@ -457,9 +457,12 @@ a {
   color: #334680;
   margin-top: 3.5rem;
 }
+.job-desc .description p {
+  line-height: 2.4rem;
+}
 .job-desc .description p,
 .job-desc .description li {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 .job-desc .description h2,
 .job-desc .description strong {

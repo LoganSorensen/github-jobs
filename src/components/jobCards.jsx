@@ -12,8 +12,8 @@ const JobCards = (props) => {
     jobsAPI()
       .get("positions.json?")
       .then((res) => {
-        console.log(res.data)
-        props.setSearchResults(res.data);
+        console.log(res.data);
+        props.setSearchResults(res.data, props.fullTime);
       })
       .catch((err) => console.log(err));
   };
@@ -36,6 +36,7 @@ const JobCards = (props) => {
 const mapStateToProps = (state) => {
   return {
     jobs: state.setSearchResults.jobs,
+    fullTime: state.setFilters.fullTime,
   };
 };
 
