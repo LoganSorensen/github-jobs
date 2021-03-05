@@ -5,6 +5,5 @@ export const setSearchResults = (results, fullTime) => {
 };
 
 export const changePage = (pageNumber) => {
-  console.log('action', pageNumber)
   return { type: CHANGE_PAGE, payload: pageNumber };
 };

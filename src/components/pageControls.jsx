@@ -30,23 +30,22 @@ const PageControls = (props) => {
   const handlePageChange = (e, direction = null) => {
     if (direction === "left" && props.currentPage - 1 > 0) {
       props.changePage(props.currentPage - 1);
-      console.log('left btn')
-
     } else if (
       direction === "right" &&
       props.totalPages - props.currentPage > 0
     ) {
       props.changePage(props.currentPage + 1);
-      console.log('right btn')
     } else {
       props.changePage(Number(e.target.value));
-      console.log('else')
     }
   };
 
   return (
     <div className="page-controls">
-      <button className={`${props.currentPage === 1 ? 'btn-disabled': ""}`} onClick={(e) => handlePageChange(e, "left")}>
+      <button
+        className={`${props.currentPage === 1 ? "btn-disabled" : ""}`}
+        onClick={(e) => handlePageChange(e, "left")}
+      >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
 
@@ -144,7 +143,9 @@ const PageControls = (props) => {
       )}
 
       <button
-        className={`arrow-btn-right ${props.currentPage === props.totalPages ? "btn-disabled" : ""}`}
+        className={`arrow-btn-right ${
+          props.currentPage === props.totalPages ? "btn-disabled" : ""
+        }`}
         onClick={(e) => handlePageChange(e, "right")}
       >
         <FontAwesomeIcon icon={faChevronRight} />

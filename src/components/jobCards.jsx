@@ -34,7 +34,6 @@ const JobCards = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  // console.log('STATE', state)
   return {
     jobs: state.searchResultsReducer.jobs,
     currentPage: state.searchResultsReducer.currentPage,

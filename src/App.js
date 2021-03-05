@@ -40,7 +40,7 @@ function App(props) {
   };
 
   useEffect(() => {
-    // getLocation();
+    getLocation();
   }, []);
 
   return (

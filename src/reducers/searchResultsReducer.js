@@ -9,17 +9,16 @@ export const searchResultsReducer = (state = initialState, action) => {
       const pageJobs = [];
 
       if (action.fullTime === true) {
+        // creates an array from the API response that contains only full time jobs
         const jobs = action.payload.filter((job) => job.type === "Full Time");
 
         let numberOfPages = Math.ceil(jobs.length / 5);
 
+        // pushes an array of 5 (or less) jobs into the "pageJobs" array
+        // each set of 5 jobs wil be rendered on a separate page
         for (let i = 0; i < numberOfPages; i++) {
-          if (i === numberOfPages - 1) {
-            pageJobs.push(jobs.slice(firstNumber, jobs.length));
-          } else {
-            pageJobs.push(jobs.slice(firstNumber, firstNumber + 5));
-            firstNumber += 5;
-          }
+          pageJobs.push(jobs.slice(firstNumber, firstNumber + 5));
+          firstNumber += 5;
         }
 
         return {
@@ -32,14 +31,8 @@ export const searchResultsReducer = (state = initialState, action) => {
         let numberOfPages = Math.ceil(action.payload.length / 5);
 
         for (let i = 0; i < numberOfPages; i++) {
-          if (i === numberOfPages - 1) {
-            pageJobs.push(
-              action.payload.slice(firstNumber, action.payload.length)
-            );
-          } else {
-            pageJobs.push(action.payload.slice(firstNumber, firstNumber + 5));
-            firstNumber += 5;
-          }
+          pageJobs.push(action.payload.slice(firstNumber, firstNumber + 5));
+          firstNumber += 5;
         }
 
         return {
