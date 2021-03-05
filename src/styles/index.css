@@ -330,11 +330,11 @@ a {
   height: 1.8rem;
   width: 1.8rem;
 }
-.job-cards {
+.jobs {
   width: 72%;
   margin-left: 3%;
 }
-.job-cards .job-card {
+.jobs .job-card {
   display: flex;
   align-items: center;
   padding: 1.2rem;
@@ -346,33 +346,33 @@ a {
   position: relative;
   cursor: pointer;
 }
-.job-cards .job-details {
+.jobs .job-details {
   height: 100%;
   color: #334680;
 }
-.job-cards .job-details span {
+.jobs .job-details span {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.job-cards .job-details h2 {
+.jobs .job-details h2 {
   font-size: 1.8rem;
   font-weight: 400;
   margin: 1em 0;
 }
-.job-cards .job-location-and-date {
+.jobs .job-location-and-date {
   display: flex;
   position: absolute;
   right: 1.2rem;
   bottom: 2rem;
 }
-.job-cards .job-location-and-date span {
+.jobs .job-location-and-date span {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.job-cards .job-location-and-date svg {
+.jobs .job-location-and-date svg {
   margin-right: 0.7rem;
 }
-.job-cards .job-date {
+.jobs .job-date {
   margin-left: 2rem;
 }
 .job-page {
@@ -469,4 +469,44 @@ a {
 .job-desc .description strong {
   margin-top: 4rem;
   font-weight: 500;
+}
+.page-controls {
+  display: flex;
+}
+.page-controls button,
+.page-controls .ellipses {
+  height: 3.6rem;
+  width: 3.6rem;
+  margin: 0 0.6rem;
+  font-size: 1.2rem;
+  color: #b9bcdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.page-controls button {
+  font-weight: 400;
+  border: 1px solid #b7bcce;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.page-controls button:hover {
+  color: #1e86ff;
+  border-color: #1e86ff;
+}
+.page-controls .arrow-btn-right {
+  margin-right: 0;
+}
+.page-controls .btn-disabled {
+  pointer-events: none;
+}
+.page-controls .current-page-btn {
+  color: white;
+  background-color: #1e86ff;
+  border-color: #1e86ff;
+  cursor: default;
+}
+.page-controls .current-page-btn:hover {
+  color: white;
 }

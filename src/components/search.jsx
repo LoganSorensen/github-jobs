@@ -23,6 +23,7 @@ const Search = (props) => {
         }`
       )
       .then((res) => {
+        console.log(res.data)
         props.setSearchResults(res.data, props.fullTime);
       })
       .catch((err) => console.log(err));
@@ -46,8 +47,8 @@ const Search = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.setFilters.location,
-    fullTime: state.setFilters.fullTime,
+    location: state.filtersReducer.location,
+    fullTime: state.filtersReducer.fullTime,
   };
 };
 

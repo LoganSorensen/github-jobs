@@ -40,7 +40,7 @@ function App(props) {
   };
 
   useEffect(() => {
-    getLocation();
+    // getLocation();
   }, []);
 
   return (
@@ -60,7 +60,7 @@ function App(props) {
 
 const mapStateToProps = (state) => {
   return {
-    fullTime: state.setFilters.fullTime,
+    fullTime: state.filtersReducer.fullTime,
   };
 };
 

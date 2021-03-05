@@ -1,19 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Search from "../components/search";
 import Filters from "../components/filters";
 import JobCards from "../components/jobCards";
+import PageControls from "../components/pageControls";
 
-const SearchPage = () => {
+const SearchPage = (props) => {
   return (
     <>
       <Search />
       <div className="filters-and-jobs">
         <Filters />
-        <JobCards />
+        <div className="jobs">
+          <JobCards />
+          {props.totalPages > 1 && <PageControls />}
+        </div>
       </div>
     </>
   );
 };
 
-export default SearchPage;
+const mapStateToProps = (state) => {
+  return {
+    totalPages: state.searchResultsReducer.totalPages,
+  };
+};
+
+export default connect(mapStateToProps, {})(SearchPage);

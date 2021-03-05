@@ -118,8 +118,10 @@ const Filters = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    fullTime: state.setFilters.fullTime
-  }
-}
+    fullTime: state.filtersReducer.fullTime,
+  };
+};
 
-export default connect(mapStateToProps, { setFilters, toggleFullTime })(Filters);
+export default connect(mapStateToProps, { setFilters, toggleFullTime })(
+  Filters
+);
