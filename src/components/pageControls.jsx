@@ -15,7 +15,7 @@ const PageControls = (props) => {
   const setActiveBtn = () => {
     pageNumberBtns = document.querySelectorAll(".page-number-btn");
     pageNumberBtns.forEach((btn) => {
-      if (btn.innerHTML == props.currentPage) {
+      if (Number(btn.innerHTML) === Number(props.currentPage)) {
         btn.classList.add("current-page-btn");
       } else {
         btn.classList.remove("current-page-btn");
@@ -25,7 +25,7 @@ const PageControls = (props) => {
 
   useEffect(() => {
     setActiveBtn();
-  }, [props.currentPage]);
+  }, [props.currentPage, setActiveBtn]);
 
   const handlePageChange = (e, direction = null) => {
     if (direction === "left" && props.currentPage - 1 > 0) {

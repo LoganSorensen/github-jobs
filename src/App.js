@@ -41,7 +41,7 @@ function App(props) {
 
   useEffect(() => {
     getLocation();
-  }, []);
+  });
 
   return (
     <div className="App">

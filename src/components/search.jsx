@@ -23,7 +23,6 @@ const Search = (props) => {
         }`
       )
       .then((res) => {
-        console.log(res.data);
         props.setSearchResults(res.data, props.fullTime);
       })
       .catch((err) => console.log(err));

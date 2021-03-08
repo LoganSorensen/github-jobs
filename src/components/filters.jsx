@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 import { setFilters, toggleFullTime } from "../actions/setFiltersActions";
 
-const Filters = (props) => {
+const Filters = ({setFilters, toggleFullTime, fullTime}) => {
   const [location, setLocation] = useState("");
 
   const selectLocation = (e) => {
@@ -25,8 +25,8 @@ const Filters = (props) => {
   };
 
   useEffect(() => {
-    props.setFilters(location);
-  }, [location]);
+    setFilters(location);
+  }, [location, setFilters]);
 
   return (
     <div className="filters">
@@ -34,8 +34,8 @@ const Filters = (props) => {
         <input
           type="checkbox"
           id="full-time"
-          checked={props.fullTime === true ? true : false}
-          onChange={() => props.toggleFullTime()}
+          checked={fullTime === true ? true : false}
+          onChange={() => toggleFullTime()}
         />
         <label htmlFor="full-time">Full time only</label>
       </div>
