@@ -1,8 +1,8 @@
 .page-controls {
   display: flex;
 
-button, .ellipses {
-
+  button,
+  .ellipses {
     height: 3.6rem;
     width: 3.6rem;
     margin: 0 0.6rem;
@@ -12,7 +12,7 @@ button, .ellipses {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-}
+  }
 
   button {
     font-weight: 400;
@@ -26,21 +26,20 @@ button, .ellipses {
   }
 
   .arrow-btn-right {
-      margin-right: 0;
+    margin-right: 0;
   }
 
   .btn-disabled {
-      pointer-events: none;
+    pointer-events: none;
   }
 
-
   .current-page-btn {
+    color: white;
+    background-color: @accent-blue;
+    border-color: @accent-blue;
+    cursor: default;
+    &:hover {
       color: white;
-      background-color: @accent-blue;
-      border-color: @accent-blue;
-      cursor:default;
-      &:hover {
-          color: white;
-      }
+    }
   }
 }

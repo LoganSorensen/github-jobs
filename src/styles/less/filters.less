@@ -3,12 +3,21 @@
   font-size: 1.4rem;
   width: 25%;
 
+  @media @tablet {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
   .full-time-checkbox {
     display: flex;
     align-items: center;
     font-weight: 500;
     color: @dark-blue;
     margin-bottom: 2.5rem;
+
+    @media @tablet {
+      margin-left: 1rem;
+    }
   }
 
   .location {
@@ -36,6 +45,10 @@
         &::placeholder {
           color: @light-gray;
         }
+
+        @media @tablet {
+          padding-left: 4rem;
+        }
       }
     }
 
@@ -49,6 +62,10 @@
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
+
+      @media @tablet {
+        margin-bottom: 1.5rem;
+      }
 
       label {
         color: @dark-blue;

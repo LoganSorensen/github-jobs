@@ -7,7 +7,7 @@ export const filtersReducer = (state = initialState, action) => {
     case SET_FILTERS:
       return { ...state, location: action.payload };
     case TOGGLE_FULL_TIME:
-      return {...state, fullTime: !state.fullTime}
+      return { ...state, fullTime: !state.fullTime };
     default:
       return state;
   }

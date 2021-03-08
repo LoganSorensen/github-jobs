@@ -24,6 +24,7 @@ export const searchResultsReducer = (state = initialState, action) => {
         return {
           ...state,
           jobs: pageJobs,
+          allJobs: jobs,
           currentPage: 1,
           totalPages: Math.ceil(jobs.length / 5),
         };
@@ -38,6 +39,7 @@ export const searchResultsReducer = (state = initialState, action) => {
         return {
           ...state,
           jobs: pageJobs,
+          allJobs: action.payload,
           currentPage: 1,
           totalPages: numberOfPages,
         };

@@ -173,6 +173,11 @@ html {
 body {
   padding: 2% 7%;
 }
+@media (max-width: 1024px) {
+  body {
+    padding: 2% 4%;
+  }
+}
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -184,14 +189,21 @@ h1 span {
 .filters-and-jobs {
   display: flex;
 }
+@media (max-width: 768px) {
+  .filters-and-jobs {
+    flex-direction: column;
+  }
+}
 a {
   text-decoration: none;
 }
 .company-logo {
   display: flex;
   align-items: center;
-  width: 9rem;
-  height: 9rem;
+  min-width: 9rem;
+  max-width: 9rem;
+  min-height: 9rem;
+  max-height: 9rem;
   overflow: hidden;
   border-radius: 4px;
   margin-right: 1.3rem;
@@ -221,6 +233,9 @@ a {
   padding: 0.5rem;
   width: 6.3rem;
 }
+.job-date {
+  font-size: 1.2rem;
+}
 .job-date svg,
 .job-date span {
   color: #b7bcce;
@@ -243,9 +258,14 @@ a {
   display: flex;
   align-items: center;
 }
+@media (max-width: 425px) {
+  .search form {
+    width: 90%;
+  }
+}
 .search form svg {
   position: absolute;
-  left: 2%;
+  left: 2rem;
   font-size: 1.5rem;
   color: #b9bcdf;
 }
@@ -262,6 +282,11 @@ a {
 .search form input::placeholder {
   color: #b9bcdf;
 }
+@media (max-width: 425px) {
+  .search form input {
+    padding-left: 4em;
+  }
+}
 .search form button {
   color: white;
   background-color: #1e86ff;
@@ -274,10 +299,22 @@ a {
   padding: 0.2em 3em;
   right: 0.5%;
 }
+@media (max-width: 425px) {
+  .search form button {
+    padding: 0.2em 2em;
+    right: 1%;
+  }
+}
 .filters {
   font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
   width: 25%;
+}
+@media (max-width: 768px) {
+  .filters {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 .filters .full-time-checkbox {
   display: flex;
@@ -285,6 +322,11 @@ a {
   font-weight: 500;
   color: #334680;
   margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .filters .full-time-checkbox {
+    margin-left: 1rem;
+  }
 }
 .filters .location h3 {
   font-weight: 700;
@@ -310,6 +352,11 @@ a {
 .filters .location .search-bar input::placeholder {
   color: #b9bcdf;
 }
+@media (max-width: 768px) {
+  .filters .location .search-bar input {
+    padding-left: 4rem;
+  }
+}
 .filters .location svg {
   position: absolute;
   color: #b9bcdf;
@@ -319,6 +366,11 @@ a {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .filters .location .location-option {
+    margin-bottom: 1.5rem;
+  }
 }
 .filters .location .location-option label {
   color: #334680;
@@ -334,6 +386,12 @@ a {
   width: 72%;
   margin-left: 3%;
 }
+@media (max-width: 768px) {
+  .jobs {
+    width: 100%;
+    margin: 0;
+  }
+}
 .jobs .job-card {
   display: flex;
   align-items: center;
@@ -346,9 +404,24 @@ a {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .jobs .job-card {
+    height: 14.7rem;
+    flex-direction: column;
+    align-items: unset;
+  }
+}
+.jobs .logo-and-details {
+  display: flex;
+}
 .jobs .job-details {
   height: 100%;
   color: #334680;
+}
+@media (max-width: 768px) {
+  .jobs .job-details {
+    height: auto;
+  }
 }
 .jobs .job-details span {
   font-size: 1.2rem;
@@ -358,12 +431,22 @@ a {
   font-size: 1.8rem;
   font-weight: 400;
   margin: 1em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .jobs .job-location-and-date {
   display: flex;
   position: absolute;
   right: 1.2rem;
   bottom: 2rem;
+}
+@media (max-width: 425px) {
+  .jobs .job-location-and-date {
+    justify-content: space-between;
+    margin-top: 2rem;
+    position: unset;
+  }
 }
 .jobs .job-location-and-date span {
   font-size: 1.2rem;
@@ -379,10 +462,21 @@ a {
   margin: 5rem 0;
   display: flex;
 }
+@media (max-width: 768px) {
+  .job-page {
+    flex-direction: column;
+  }
+}
 .sidebar {
   font-family: "Poppins", sans-serif;
   width: 20%;
   font-size: 1.4rem;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 }
 .sidebar a {
   display: flex;
@@ -403,20 +497,41 @@ a {
   color: #b9bcdf;
   margin: 5rem 0 2rem;
 }
+.sidebar p {
+  line-height: 2.1rem;
+}
 .job-desc {
   width: 75%;
   margin-left: 5%;
+}
+@media (max-width: 768px) {
+  .job-desc {
+    width: 100%;
+    margin: 0;
+  }
 }
 .job-desc .title-and-type {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 768px) {
+  .job-desc .title-and-type {
+    flex-direction: column;
+    align-items: unset;
+  }
+}
 .job-desc .title-and-type h2 {
   font-size: 2.4rem;
   font-weight: 700;
   color: #334680;
   margin-right: 1.5rem;
+}
+@media (max-width: 768px) {
+  .job-desc .title-and-type h2 {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
 }
 .job-desc .job-date svg {
   margin-right: 0.6rem;

@@ -12,9 +12,13 @@
     display: flex;
     align-items: center;
 
+    @media @mobile-large {
+      width: 90%;
+    }
+
     svg {
       position: absolute;
-      left: 2%;
+      left: 2rem;
       font-size: 1.5rem;
       color: @light-gray;
     }
@@ -32,6 +36,10 @@
       &::placeholder {
         color: @light-gray;
       }
+
+      @media @mobile-large {
+        padding-left: 4em;
+      }
     }
 
     button {
@@ -45,6 +53,11 @@
       height: 88%;
       padding: 0.2em 3em;
       right: 0.5%;
+
+      @media @mobile-large {
+        padding: 0.2em 2em;
+        right: 1%;
+      }
     }
   }
 }

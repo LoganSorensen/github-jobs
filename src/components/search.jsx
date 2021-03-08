@@ -23,10 +23,16 @@ const Search = (props) => {
         }`
       )
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         props.setSearchResults(res.data, props.fullTime);
       })
       .catch((err) => console.log(err));
+  };
+
+  const truncateStr = (str) => {
+    const width = window.screen.width;
+    const length = Math.floor(Math.floor(width / 10) / 10) * 10 - 20;
+    return str.length > length ? str.substr(0, length - 1) + "..." : str;
   };
 
   return (
@@ -35,7 +41,9 @@ const Search = (props) => {
         <FontAwesomeIcon icon={faBriefcase} />
         <input
           type="text"
-          placeholder="Search by job name, companies, expertise, or benefits"
+          placeholder={truncateStr(
+            "Search by job name, companies, expertise, or benefits"
+          )}
           value={search}
           onChange={handleChange}
         />
