@@ -1,5 +1,6 @@
 export const SET_SEARCH_RESULTS = "SET_SEARCH_RESULTS";
 export const CHANGE_PAGE = "CHANGE_PAGE";
+export const START_SEARCH = "START_SEARCH";
 
 export const SET_FILTERS = "SET_FILTERS";
 export const TOGGLE_FULL_TIME = "TOGGLE_FULL_TIME";

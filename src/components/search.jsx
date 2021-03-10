@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
-import { setSearchResults } from "../actions/setSearchResultsActions";
+import { setSearchResults, startSearch } from "../actions/setSearchResultsActions";
 import { jobsAPI } from "../utils/jobsAPI";
 
 const Search = (props) => {
@@ -15,6 +15,7 @@ const Search = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.startSearch();
     jobsAPI()
       // appends the job location to the URL if one has been specified
       .get(
@@ -59,4 +60,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setSearchResults })(Search);
+export default connect(mapStateToProps, { setSearchResults, startSearch })(Search);

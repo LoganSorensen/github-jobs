@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 import Search from "../components/search";
 import Filters from "../components/filters";
@@ -12,10 +13,22 @@ const SearchPage = (props) => {
       <Search />
       <div className="filters-and-jobs">
         <Filters />
-        <div className="jobs">
-          <JobCards />
-          {props.totalPages > 1 && <PageControls />}
-        </div>
+        {props.isLoading ? (
+          <div className="loader">
+            <Loader
+              type="RevolvingDot"
+              color="#334680"
+              height={100}
+              width={100}
+              timeout={30000}
+            />
+          </div>
+        ) : (
+          <div className="jobs">
+            <JobCards />
+            {props.totalPages > 1 && <PageControls />}
+          </div>
+        )}
       </div>
     </>
   );
@@ -24,6 +37,7 @@ const SearchPage = (props) => {
 const mapStateToProps = (state) => {
   return {
     totalPages: state.searchResultsReducer.totalPages,
+    isLoading: state.searchResultsReducer.isLoading,
   };
 };
 

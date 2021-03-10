@@ -5,10 +5,14 @@ import { connect } from "react-redux";
 import JobCard from "./jobCard";
 
 // import { jobsAPI } from "../utils/jobsAPI";
-import { setSearchResults } from "../actions/setSearchResultsActions";
+import {
+  setSearchResults,
+  startSearch,
+} from "../actions/setSearchResultsActions";
 
 const JobCards = (props) => {
   // const hitAPI = () => {
+  //   props.startSearch();
   //   jobsAPI()
   //     .get("positions.json?")
   //     .then((res) => {
@@ -47,7 +51,10 @@ const mapStateToProps = (state) => {
     currentPage: state.searchResultsReducer.currentPage,
     totalPages: state.searchResultsReducer.totalPages,
     fullTime: state.filtersReducer.fullTime,
+    isLoading: state.searchResultsReducer.isLoading,
   };
 };
 
-export default connect(mapStateToProps, { setSearchResults })(JobCards);
+export default connect(mapStateToProps, { setSearchResults, startSearch })(
+  JobCards
+);

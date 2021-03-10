@@ -1,9 +1,11 @@
-import { SET_SEARCH_RESULTS, CHANGE_PAGE } from "../actions/types";
+import { SET_SEARCH_RESULTS, CHANGE_PAGE, START_SEARCH } from "../actions/types";
 
-const initialState = {};
+const initialState = { isLoading: true };
 
 export const searchResultsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case START_SEARCH:
+      return {...state, isLoading: true}
     case SET_SEARCH_RESULTS:
       let firstNumber = 0;
       const pageJobs = [];
@@ -23,6 +25,7 @@ export const searchResultsReducer = (state = initialState, action) => {
 
         return {
           ...state,
+          isLoading: false,
           jobs: pageJobs,
           allJobs: jobs,
           currentPage: 1,
@@ -38,6 +41,7 @@ export const searchResultsReducer = (state = initialState, action) => {
 
         return {
           ...state,
+          isLoading: false,
           jobs: pageJobs,
           allJobs: action.payload,
           currentPage: 1,
